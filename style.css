@@ -13,7 +13,7 @@ h1 {
 .search-container {
   display: flex;
   align-items: center;
-   flex-direction: column;
+  flex-direction: column;
   justify-content: center;
   margin-top: 100px;
   background-color: #ffffff;
@@ -27,9 +27,46 @@ h1 {
   align-items: center;
 }
 
-#site-selection, #search-input, #search-button {
-  margin: 10px;
+#site-selection {
+  appearance: none;
+  outline: none;
+  border: 1px solid #aaa;
   border-radius: 8px;
+  padding: 10px;
+  width: 200px;
+  font-size: 16px;
+  margin: 10px;
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #000 50%),
+    linear-gradient(135deg, #000 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 2.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+#site-selection:hover {
+  border-color: #777;
+}
+
+#site-selection[multiple] {
+  background-image: none;
+}
+
+#site-selection:focus-visible {
+  box-shadow: 0 0 0 3px #a6c8ff;
+  border-color: #007bff;
+}
+
+#site-selection:focus:not(:focus-visible) {
+  box-shadow: none;
 }
 
 #search-input {
@@ -37,6 +74,8 @@ h1 {
   width: 300px;
   font-size: 16px;
   border: 2px solid #4B9DF8;
+  border-radius: 8px;
+  margin: 10px;
 }
 
 #search-button {
@@ -47,6 +86,8 @@ h1 {
   border: none;
   cursor: pointer;
   transition: background-color 0.3s;
+  border-radius: 8px;
+  margin: 10px;
 }
 
 #search-button:hover {
