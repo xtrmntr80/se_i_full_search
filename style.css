@@ -1,5 +1,5 @@
 body {
-  font-family: 'Poppins', sans-serif;  /* ポピンズはティーンに人気のフォント */
+  font-family: 'Poppins', sans-serif;
   background-color: #F7F8FC;
   color: #333;
 }
@@ -7,13 +7,13 @@ body {
 h1 {
   text-align: center;
   margin-bottom: 20px;
-  color: #4B9DF8;  /* 鮮やかな青 */
+  color: #4B9DF8;
 }
 
 .search-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin-top: 100px;
   background-color: #ffffff;
   padding: 20px;
@@ -21,23 +21,27 @@ h1 {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+.input-container {
+  display: flex;
+  align-items: center;
+}
+
 #site-selection, #search-input, #search-button {
   margin: 10px;
-  height: 120px;
-  border-radius: 8px;  /* 角を丸く */
+  border-radius: 8px;
 }
 
 #search-input {
   padding: 10px;
   width: 300px;
   font-size: 16px;
-  border: 2px solid #4B9DF8;  /* 青のボーダー */
+  border: 2px solid #4B9DF8;
 }
 
 #search-button {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #4B9DF8;  /* 青のボタン */
+  background-color: #4B9DF8;
   color: white;
   border: none;
   cursor: pointer;
@@ -45,7 +49,7 @@ h1 {
 }
 
 #search-button:hover {
-  background-color: #357ABD;  /* ホバー時に少し濃い青に */
+  background-color: #357ABD;
 }
 
 #search-history {
@@ -53,10 +57,6 @@ h1 {
   text-align: center;
   margin-top: 20px;
 }
-
-
-
-/* 共通スタイル（変更なし）は省略します */
 
 /* タブレット向けのスタイル */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
@@ -75,6 +75,11 @@ h1 {
     .search-container {
         width: 90%;
         margin: 20px auto;
+        flex-direction: column;
+    }
+
+    .input-container {
+        flex-direction: column;
     }
 
     #site-selection, #search-input, #search-button {
