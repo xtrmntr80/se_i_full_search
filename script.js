@@ -5,13 +5,17 @@ const searchHistory = document.getElementById('search-history');
 
 searchButton.addEventListener('click', function() {
   const searchTerm = searchInput.value;
-  const selectedSites = Array.from(siteSelection.selectedOptions).map(option => option.value);
-  
+  let selectedSites = Array.from(siteSelection.selectedOptions).map(option => option.value);
+
+  // If "all sites" option is selected, remove it from the array and use all other sites
+  if (selectedSites.includes('all')) {
+    selectedSites = Array.from(siteSelection.options).map(option => option.value).filter(site => site !== 'all');
+  }
+
   selectedSites.forEach(site => {
     const query = `site:${site} ${searchTerm}`;
     const searchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(query);
     
-    // 履歴機能の追加
     searchHistory.innerText += `${searchTerm} (${site}), `;
     
     openNewTab(searchUrl);
