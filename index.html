@@ -8,17 +8,20 @@
 </head>
 <body>
   <div class="search-container">
-    <h1>学習サーチ</h1>
-    <select id="site-selection" multiple>
-  <option value="asahi.com">Asahi</option>
-  <option value="yomiuri.co.jp">Yomiuri</option>
-  <!-- ...他のオプションもここに追加 -->
-</select>
-
+  <div class="input-container">
+    <select id="site-selection">
+      <option value="asahi.com">Asahi</option>
+      <option value="yomiuri.co.jp">Yomiuri</option>
+      <!-- ...他のオプションもここに追加 -->
+    </select>
     <input type="text" id="search-input" placeholder="トピックを検索">
     <button id="search-button">Go!</button>
-    <div id="search-history">検索履歴: </div>
+  
   </div>
+  <div id="search-history">検索履歴: </div>
+</div>
+
+    
   <script src="script.js"></script>
 </body>
 </html>
