@@ -9,10 +9,13 @@
 <body>
   <div class="search-container">
   <div class="input-container">
-    <select id="site-selection">
-      <option value="asahi.com">Asahi</option>
-      <option value="yomiuri.co.jp">Yomiuri</option>
-      <!-- ...他のオプションもここに追加 -->
+    <select id="site-selection" multiple>
+  <option value="all">全サイト横断検索</option>
+  <option value="asahi.com">Asahi</option>
+  <option value="yomiuri.co.jp">Yomiuri</option>
+  <!-- ...他のオプションもここに追加 -->
+</select>
+
     </select>
     <input type="text" id="search-input" placeholder="トピックを検索">
     <button id="search-button">Go!</button>
