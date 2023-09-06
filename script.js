@@ -3,11 +3,6 @@ const searchInput = document.getElementById('search-input');
 const siteSelection = document.getElementById('site-selection');
 const searchHistory = document.getElementById('search-history');
 
-const searchButton = document.getElementById('search-button');
-const searchInput = document.getElementById('search-input');
-const siteSelection = document.getElementById('site-selection');
-const searchHistory = document.getElementById('search-history');
-
 searchButton.addEventListener('click', function() {
   const searchTerm = searchInput.value;
   const selectedSites = Array.from(siteSelection.selectedOptions).map(option => option.value);
@@ -32,5 +27,3 @@ function openNewTab(url) {
   a.click();
   document.body.removeChild(a);
 }
-
-
