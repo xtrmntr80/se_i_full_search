@@ -1,0 +1,17 @@
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 0; /* 上下の余白を0に設定 */
+  margin-top: 100px; /* 上部の余白を追加（100px） */
+}
+
+#search-input {
+  padding: 10px;
+  width: 400px;
+  font-size: 18px;
+}
+
+#search-button {
+  padding: 10px 20px;
+  font-size: 18px;
+}
