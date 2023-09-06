@@ -25,3 +25,10 @@ This repository contains a simple web interface for performing custom Google sea
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
+## style.css
+
+This CSS file provides the styling for the search interface. It ensures a clean and user-friendly design for the search input and button.
+
+## script.js
+
+The JavaScript file for handling the custom search functionality. It captures the user's search input and constructs a custom Google search URL to query specific sites.
