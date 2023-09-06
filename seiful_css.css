@@ -1,8 +1,8 @@
 .search-container {
   display: flex;
   justify-content: center;
-  margin: 0; /* ã‰º‚Ì—]”’‚ğ0‚Éİ’è */
-  margin-top: 100px; /* ã•”‚Ì—]”’‚ğ’Ç‰Ái100pxj */
+  margin: 0;/* ä¸Šä¸‹ã®ä½™ç™½ã‚’0ã«è¨­å®š */
+  margin-top: 100px; /* ä¸Šéƒ¨ã®ä½™ç™½ã‚’è¿½åŠ ï¼ˆ100pxï¼‰ */
 }
 
 #search-input {
