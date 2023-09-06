@@ -1,7 +1,9 @@
 body {
+  
   font-family: 'Poppins', sans-serif;
   background-color: #F7F8FC;
   color: #333;
+
 }
 
 h1 {
@@ -28,7 +30,8 @@ h1 {
 }
 
 #site-selection {
-  appearance: none;
+  display: none; 
+  /* appearance: none;
   outline: none;
   border: 1px solid #aaa;
   border-radius: 8px;
@@ -49,7 +52,7 @@ h1 {
     5px 5px,
     5px 5px,
     1px 1.5em;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;*/
 }
 
 #site-selection:hover {
@@ -79,19 +82,19 @@ h1 {
 }
 
 #search-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #4B9DF8;
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  border-radius: 8px;
-  margin: 10px;
+    background-color: #4B9DF8;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px;
 }
 
 #search-button:hover {
-  background-color: #357ABD;
+    background-color: #357ABD;
 }
 
 #search-history {
