@@ -13,6 +13,7 @@ h1 {
 .search-container {
   display: flex;
   align-items: center;
+   flex-direction: column;
   justify-content: center;
   margin-top: 100px;
   background-color: #ffffff;
