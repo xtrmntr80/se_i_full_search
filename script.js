@@ -1,3 +1,6 @@
+<!-- script.js -->
+
+
 const searchButton = document.getElementById('search-button');
 const searchInput = document.getElementById('search-input');
 const siteSelection = document.getElementById('site-selection');
