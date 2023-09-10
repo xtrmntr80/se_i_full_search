@@ -1,4 +1,4 @@
-/* スタイルシート (CSS) */
+/* ベーススタイル */
 #checkboxes-container {
     display: flex;
     flex-direction: column; /* 縦方向に要素を並べる */
@@ -13,4 +13,21 @@
 
 #checkboxes-container label {
     cursor: pointer; /* ラベルにマウスカーソルを合わせたときのスタイルを指定 */
+}
+
+/* タブレット向けスタイル (例: 768px - 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* タブレット向けのスタイルをここに追加 */
+    #checkboxes-container {
+        max-width: 400px;
+    }
+}
+
+/* スマホ向けスタイル (例: 幅が767px以下) */
+@media screen and (max-width: 767px) {
+    /* スマホ向けのスタイルをここに追加 */
+    #checkboxes-container {
+        max-width: 100%;
+        padding: 0 10px; /* サイドの余白を追加 */
+    }
 }
