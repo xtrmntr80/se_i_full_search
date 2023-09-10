@@ -1,33 +1,77 @@
-/* ベーススタイル */
-#checkboxes-container {
-    display: flex;
-    flex-direction: column; /* 縦方向に要素を並べる */
-    gap: 10px; /* 各チェックボックス間の間隔 */
-    max-width: 300px; /* コンテナの最大幅 */
-    margin: 20px auto; /* 上下の余白と、中央揃えのための自動マージン */
+/* ベースのスタイル */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #FAF3DD; /* パステルイエロー */
+    color: #333; /* ダークテキスト */
 }
 
+/* チェックボックスコンテナのスタイル */
+#checkboxes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 300px;
+    margin: 20px auto;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2); /* 影付きでポップな感じに */
+    background-color: #F2DFF4; /* パステルパープル */
+}
+
+/* チェックボックスとラベルのスタイル */
 #checkboxes-container input[type="checkbox"] {
-    margin-right: 5px; /* チェックボックスとラベルの間の余白 */
+    margin-right: 8px;
+    appearance: none; /* デフォルトのチェックボックススタイルを非表示に */
+    width: 20px;
+    height: 20px;
+    background-color: #FFD5E5; /* パステルピンク */
+    border: 1px solid #FFAEC8; /* より明るいピンクのボーダー */
+    border-radius: 4px;
+    position: relative;
+    outline: none; /* クリック時のアウトラインを非表示に */
+    cursor: pointer;
+}
+
+#checkboxes-container input[type="checkbox"]:checked::after {
+    content: '''; /* チェックマークのアイコン */
+    color: #FFAEC8; /* より明るいピンク */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 中央に配置 */
+    font-size: 14px;
 }
 
 #checkboxes-container label {
-    cursor: pointer; /* ラベルにマウスカーソルを合わせたときのスタイルを指定 */
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    color: #FF85AB; /* 明るいピンクテキスト */
 }
 
-/* タブレット向けスタイル (例: 768px - 1024px) */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-    /* タブレット向けのスタイルをここに追加 */
-    #checkboxes-container {
-        max-width: 400px;
-    }
+/* 検索ボタンのスタイル */
+#search-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFB8B8; /* ピンクベースのボタン色 */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
-/* スマホ向けスタイル (例: 幅が767px以下) */
-@media screen and (max-width: 767px) {
-    /* スマホ向けのスタイルをここに追加 */
-    #checkboxes-container {
-        max-width: 100%;
-        padding: 0 10px; /* サイドの余白を追加 */
-    }
+#search-button:hover {
+    background-color: #FFA0A0; /* ホバー時の明るいピンク */
 }
+
+/* 検索入力のスタイル */
+#search-input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #FFAEC8; /* 明るいピンクのボーダー */
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
