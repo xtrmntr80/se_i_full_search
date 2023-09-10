@@ -1,6 +1,6 @@
 const searchButton = document.getElementById('search-button');
 const searchInput = document.getElementById('search-input');
-const allSitesCheckbox = document.getElementById('all-sites');
+const crossSiteSearchCheckbox = document.getElementById('cross-site-search');
 const checkboxesContainer = document.getElementById('checkboxes-container');
 
 // サイトのリストを配列として定義
@@ -12,16 +12,16 @@ searchButton.addEventListener('click', function() {
   const searchTerm = searchInput.value;
 
   let selectedSites;
-  if (allSitesCheckbox.checked) {
+  if (crossSiteSearchCheckbox.checked) {
     selectedSites = sites;
   } else {
     selectedSites = Array.from(checkboxesContainer.querySelectorAll('input[type="checkbox"]:checked'))
-      .map(checkbox => checkbox.name);
+      .map(checkbox => checkbox.value);
   }
 
   const siteQueries = selectedSites.map(site => `site:${site}`).join(' OR ');
   const query = `${siteQueries} ${searchTerm}`;
-  const searchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(query);
+  const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
   openNewTab(searchUrl);
 });
 
@@ -35,10 +35,10 @@ function openNewTab(url) {
   document.body.removeChild(a);
 }
 
-function deselectOthers() {
-  if (allSitesCheckbox.checked) {
-    Array.from(checkboxesContainer.querySelectorAll('input[type="checkbox"]:not(#all-sites)')).forEach(checkbox => {
+crossSiteSearchCheckbox.addEventListener('change', function() {
+  if (crossSiteSearchCheckbox.checked) {
+    Array.from(checkboxesContainer.querySelectorAll('input[type="checkbox"]:not(#cross-site-search)')).forEach(checkbox => {
       checkbox.checked = false;
     });
   }
-}
+});
