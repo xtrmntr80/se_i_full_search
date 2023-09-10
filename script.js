@@ -1,28 +1,25 @@
-<!-- script.js -->
-
-
 const searchButton = document.getElementById('search-button');
 const searchInput = document.getElementById('search-input');
-const siteSelection = document.getElementById('site-selection');
-const searchHistory = document.getElementById('search-history');
+
+// サイトのリストを配列として定義
+const sites = [
+  "baby-calendar.jp", "kidsna.com", "conobie.jp", 
+  "h-navi.jp", "j-depo.com", "feature.cozre.jp",
+  "hugkum.sho.jp", "huffingtonpost.jp", "ure.pia.co.jp",
+  "asahi.com", "kyoiku.sho.jp", "juken-mikata.net",
+  "mamari.jp", "sensei-no-gakkou.com", "kyoiku-press.co.jp",
+  "megaphone.school-voice-pj.org", "inter-edu.com", "jobrainbow.jp",
+  "sdgs.media", "imakosochihou.com", "fnn.jp",
+  "meiiku.com", "yomiuri.co.jp", "kyobun.co.jp",
+  "edujump.net", "ikuhaku.com"
+];
 
 searchButton.addEventListener('click', function() {
   const searchTerm = searchInput.value;
-  let selectedSites = Array.from(siteSelection.selectedOptions).map(option => option.value);
-
-  // If "all sites" option is selected, remove it from the array and use all other sites
-  if (selectedSites.includes('all')) {
-    selectedSites = Array.from(siteSelection.options).map(option => option.value).filter(site => site !== 'all');
-  }
-
-  selectedSites.forEach(site => {
-    const query = `site:${site} ${searchTerm}`;
-    const searchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(query);
-    
-    searchHistory.innerText += `${searchTerm} (${site}), `;
-    
-    openNewTab(searchUrl);
-  });
+  const siteQueries = sites.map(site => `site:${site}`).join(' OR ');
+  const query = `${siteQueries} ${searchTerm}`;
+  const searchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(query);
+  openNewTab(searchUrl);
 });
 
 function openNewTab(url) {
