@@ -1,111 +1,140 @@
-<!-- index.html -->
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-    
-  <title>学習サーチ</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サイト横断検索フォーム</title>
+    <style>
+        .input-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #checkboxes-container label {
+            margin-right: 10px;
+        }
+
+        #search-input {
+            width: 80%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        #search-button {
+            width: 15%;
+            padding: 10px 15px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        #search-button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-  <div class="search-container">
-  <div class="input-container">
-  
-    <select id="site-selection" multiple>
-    
-     <option value="all">全サイト横断検索</option>
-      
-      <option value="asahi.com">Asahi</option>
-      <option value="yomiuri.co.jp">Yomiuri</option>
-      <option value="manabu.asahi.com">manabu.asahi.com</option>
-      <option value="medical.nikkeibp.co.jp">medical.nikkeibp.co.jp</option>
-      <option value="catalyst-for-edu.org">catalyst-for-edu.org</option>
-      <option value="procurri.jp">procurri.jp</option>
-      <option value="www.manabinoba.com">www.manabinoba.com</option>
-      <option value="www.nits.go.jp">www.nits.go.jp</option>
-      <option value="edupedia.jp">edupedia.jp</option>
-      <option value="www.fukushishimbun.co.jp">www.fukushishimbun.co.jp</option>
-      <option value="fukushi.tv">fukushi.tv</option>
-      <option value="ysmedia.jp">ysmedia.jp</option>
-      <option value="goukaku-suppli.com">goukaku-suppli.com</option>
-      <option value="kyoiku.yomiuri.co.jp">kyoiku.yomiuri.co.jp</option>
-      <option value="benesse.jp">benesse.jp</option>
-      <option value="www.meiji.net">www.meiji.net</option>
-      <option value="www.ohrde.or.jp">www.ohrde.or.jp</option>
-      <option value="www.softbank.jp">www.softbank.jp</option>
-      <option value="edtechzine.jp">edtechzine.jp</option>
-      <option value="prtimes.jp">prtimes.jp</option>
-      <option value="www.sentankyo.jp">www.sentankyo.jp</option>
-      <option value="www.bbc.com">www.bbc.com</option>
-      <option value="toyokeizai.net">toyokeizai.net</option>
-      <option value="news.livedoor.com">news.livedoor.com</option>
-      <option value="book.jiji.com">book.jiji.com</option>
-      <option value="ten.tokyo-shoseki.co.jp">ten.tokyo-shoseki.co.jp</option>
-      <option value="gyutte.jp">gyutte.jp</option>
-      <option value="reseed.resemom.jp">reseed.resemom.jp</option>
-      <option value="www.sankei.com">www.sankei.com</option>
-      <option value="enfant.living.jp">enfant.living.jp</option>
-      <option value="ict-enews.net">ict-enews.net</option>
-      <option value="www.nhk.or.jp">www.nhk.or.jp</option>
-      <option value="www.nikkei.com">www.nikkei.com</option>
-      <option value="www.mamatas.net">www.mamatas.net</option>
-      <option value="www.47news.jp">www.47news.jp</option>
-      <option value="st.benesse.ne.jp">st.benesse.ne.jp</option>
-      <option value="mainichi.jp">mainichi.jp</option>
-      <option value="www.youtube.com">www.youtube.com</option>
-      <option value="www.babycome.ne.jp">www.babycome.ne.jp</option>
-      <option value="mamanoko.jp">mamanoko.jp</option>
-      <option value="select.mamastar.jp">select.mamastar.jp</option>
-      <option value="www.kknews.co.jp">www.kknews.co.jp</option>
-      <option value="gaxi.jp">gaxi.jp</option>
-      <option value="woman.mynavi.jp">woman.mynavi.jp</option>
-      <option value="style.ehonnavi.net">style.ehonnavi.net</option>
-      <option value="baby-calendar.jp">baby-calendar.jp</option>
-      <option value="kidsna.com">kidsna.com</option>
-      <option value="conobie.jp">conobie.jp</option>
-      <option value="h-navi.jp">h-navi.jp</option>
-      <option value="j-depo.com">j-depo.com</option>
-      <option value="feature.cozre.jp">feature.cozre.jp</option>
-      <option value="hugkum.sho.jp">hugkum.sho.jp</option>
-      <option value="www.huffingtonpost.jp">www.huffingtonpost.jp</option>
-      <option value="ure.pia.co.jp">ure.pia.co.jp</option>
-      <option value="www.asahi.com">www.asahi.com</option>
-      <option value="kyoiku.sho.jp">kyoiku.sho.jp</option>
-      <option value="juken-mikata.net">juken-mikata.net</option>
-      <option value="mamari.jp">mamari.jp</option>
-      <option value="www.sensei-no-gakkou.com">www.sensei-no-gakkou.com</option>
-      <option value="megaphone.school-voice-pj.org">megaphone.school-voice-pj.org</option>
-      <option value="www.inter-edu.com">www.inter-edu.com</option>
-      <option value="jobrainbow.jp">jobrainbow.jp</option>
-      <option value="sdgs.media">sdgs.media</option>
-      <option value="www.fnn.jp">www.fnn.jp</option>
-      <option value="meiiku.com">meiiku.com</option>
-      <option value="www.yomiuri.co.jp">www.yomiuri.co.jp</option>
-      <option value="www.asahi.com">www.asahi.com</option>
-      <option value="www.kyobun.co.jp">www.kyobun.co.jp</option>
-      <option value="edujump.net">edujump.net</option>
-      <option value="www.ikuhaku.com">www.ikuhaku.com</option>
-      <option value="www.kyoiku-press.co.jp">www.kyoiku-press.co.jp</option>
-      <option value="imakosochihou.com">imakosochihou.com</option>
+    <div class="input-container">
+    <div id="checkboxes-container">
+        <input type="checkbox" id="all-sites" name="all-sites" value="all">
+        <label for="all-sites">全サイト横断検索</label>
 
-      <!-- ...他のオプションもここに追加 -->
-      
+        <input type="checkbox" id="baby-calendar.jp" name="baby-calendar.jp" value="https://baby-calendar.jp/smilenews/all">
+        <label for="baby-calendar.jp">baby-calendar.jp</label>
 
-    </select>
+        <input type="checkbox" id="kidsna.com" name="kidsna.com" value="https://kidsna.com/magazine">
+        <label for="kidsna.com">kidsna.com</label>
+
+        <input type="checkbox" id="conobie.jp" name="conobie.jp" value="https://conobie.jp/">
+        <label for="conobie.jp">conobie.jp</label>
+
+        <input type="checkbox" id="h-navi.jp" name="h-navi.jp" value="https://h-navi.jp/">
+        <label for="h-navi.jp">h-navi.jp</label>
+
+        <input type="checkbox" id="j-depo.com" name="j-depo.com" value="https://j-depo.com/hoiku/news/">
+        <label for="j-depo.com">j-depo.com</label>
+
+        <input type="checkbox" id="feature.cozre.jp" name="feature.cozre.jp" value="https://feature.cozre.jp/">
+        <label for="feature.cozre.jp">feature.cozre.jp</label>
+
+        <input type="checkbox" id="hugkum.sho.jp" name="hugkum.sho.jp" value="https://hugkum.sho.jp/">
+        <label for="hugkum.sho.jp">hugkum.sho.jp</label>
+
+        <input type="checkbox" id="huffingtonpost.jp" name="huffingtonpost.jp" value="https://www.huffingtonpost.jp/">
+        <label for="huffingtonpost.jp">huffingtonpost.jp</label>
+
+        <input type="checkbox" id="ure.pia.co.jp" name="ure.pia.co.jp" value="https://ure.pia.co.jp/list/media?c=hapimama">
+        <label for="ure.pia.co.jp">ure.pia.co.jp</label>
+              
+        <input type="checkbox" id="asahi.com-edua" name="asahi.com-edua" value="https://www.asahi.com/edua/">
+        <label for="asahi.com-edua">asahi.com (edua)</label>
+
+        <input type="checkbox" id="kyoiku.sho.jp" name="kyoiku.sho.jp" value="https://kyoiku.sho.jp/">
+        <label for="kyoiku.sho.jp">kyoiku.sho.jp</label>
+
+        <input type="checkbox" id="juken-mikata.net" name="juken-mikata.net" value="https://juken-mikata.net/">
+        <label for="juken-mikata.net">juken-mikata.net</label>
+
+        <input type="checkbox" id="mamari.jp" name="mamari.jp" value="https://mamari.jp/">
+        <label for="mamari.jp">mamari.jp</label>
+
+        <input type="checkbox" id="sensei-no-gakkou.com" name="sensei-no-gakkou.com" value="https://www.sensei-no-gakkou.com/">
+        <label for="sensei-no-gakkou.com">sensei-no-gakkou.com</label>
+
+        <input type="checkbox" id="kyoiku-press.co.jp" name="kyoiku-press.co.jp" value="http://www.kyoiku-press.co.jp/">
+        <label for="kyoiku-press.co.jp">kyoiku-press.co.jp</label>
+
+        <input type="checkbox" id="megaphone.school-voice-pj.org" name="megaphone.school-voice-pj.org" value="https://megaphone.school-voice-pj.org/">
+        <label for="megaphone.school-voice-pj.org">megaphone.school-voice-pj.org</label>
+
+        <input type="checkbox" id="inter-edu.com" name="inter-edu.com" value="https://www.inter-edu.com/">
+        <label for="inter-edu.com">inter-edu.com</label>
+
+        <input type="checkbox" id="jobrainbow.jp" name="jobrainbow.jp" value="https://jobrainbow.jp/">
+        <label for="jobrainbow.jp">jobrainbow.jp</label>
+
+        <input type="checkbox" id="sdgs.media" name="sdgs.media" value="https://sdgs.media/">
+        <label for="sdgs.media">sdgs.media</label>
+
+        <input type="checkbox" id="imakosochihou.com" name="imakosochihou.com" value="http://imakosochihou.com/">
+        <label for="imakosochihou.com">imakosochihou.com</label>
+
+        <input type="checkbox" id="fnn.jp" name="fnn.jp" value="https://www.fnn.jp/">
+        <label for="fnn.jp">fnn.jp</label>
+
+        <input type="checkbox" id="meiiku.com" name="meiiku.com" value="https://meiiku.com/">
+        <label for="meiiku.com">meiiku.com</label>
+
+        <input type="checkbox" id="yomiuri.co.jp" name="yomiuri.co.jp" value="https://www.yomiuri.co.jp/">
+        <label for="yomiuri.co.jp">yomiuri.co.jp</label>
+
+        <input type="checkbox" id="asahi.com-main" name="asahi.com-main" value="https://www.asahi.com/?iref=pc_gnavi">
+        <label for="asahi.com-main">asahi.com (main)</label>
+
+        <input type="checkbox" id="kyobun.co.jp" name="kyobun.co.jp" value="https://www.kyobun.co.jp/">
+        <label for="kyobun.co.jp">kyobun.co.jp</label>
+
+        <input type="checkbox" id="edujump.net" name="edujump.net" value="https://edujump.net/">
+        <label for="edujump.net">edujump.net</label>
+
+        <input type="checkbox" id="ikuhaku.com" name="ikuhaku.com" value="https://www.ikuhaku.com/">
+        <label for="ikuhaku.com">ikuhaku.com</label>
+        
+    </div>
     <input type="text" id="search-input" placeholder="トピックを検索">
     <button id="search-button">Go!</button>
-  
-  </div>
-  <div id="search-history">検索履歴: </div>
 </div>
 
-    
-  <script src="script.js"></script>
+    </div>
+    <script>
+        // JavaScriptを使って、例えば全サイト横断検索がチェックされた場合に、他のチェックボックスが選択解除されるような処理を追加することができます。
+    </script>
 </body>
 </html>
