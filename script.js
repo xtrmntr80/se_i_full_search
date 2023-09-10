@@ -31,3 +31,15 @@ function openNewTab(url) {
   a.click();
   document.body.removeChild(a);
 }
+
+document.getElementById('search-button').addEventListener('click', function() {
+    var selectedSites = [];
+    var checkboxes = document.querySelectorAll('#checkboxes-container input[type="checkbox"]:checked');
+    checkboxes.forEach(function(checkbox) {
+        selectedSites.push(checkbox.value);
+    });
+
+    var searchQuery = document.getElementById('search-input').value;
+    // ここでselectedSitesとsearchQueryを使用して検索クエリを実行する
+});
+
