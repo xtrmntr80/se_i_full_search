@@ -45,6 +45,10 @@
     <div id="checkboxes-container">
         <input type="checkbox" id="all-sites" name="all-sites" value="all">
         <label for="all-sites">全サイト横断検索</label>
+        
+        <input type="checkbox" id="all-sites" name="all-sites" value="all" onclick="deselectOthers()">
+<!-- その他のチェックボックス... -->
+
 
         <input type="checkbox" id="baby-calendar.jp" name="baby-calendar.jp" value="https://baby-calendar.jp/smilenews/all">
         <label for="baby-calendar.jp">baby-calendar.jp</label>
@@ -126,6 +130,7 @@
 
         <input type="checkbox" id="ikuhaku.com" name="ikuhaku.com" value="https://www.ikuhaku.com/">
         <label for="ikuhaku.com">ikuhaku.com</label>
+        
         
     </div>
     <input type="text" id="search-input" placeholder="トピックを検索">
