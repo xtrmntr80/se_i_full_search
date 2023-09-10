@@ -1,22 +1,25 @@
 const searchButton = document.getElementById('search-button');
 const searchInput = document.getElementById('search-input');
+const allSitesCheckbox = document.getElementById('all-sites');
+const checkboxesContainer = document.getElementById('checkboxes-container');
 
 // サイトのリストを配列として定義
 const sites = [
-  "baby-calendar.jp", "kidsna.com", "conobie.jp", 
-  "h-navi.jp", "j-depo.com", "feature.cozre.jp",
-  "hugkum.sho.jp", "huffingtonpost.jp", "ure.pia.co.jp",
-  "asahi.com", "kyoiku.sho.jp", "juken-mikata.net",
-  "mamari.jp", "sensei-no-gakkou.com", "kyoiku-press.co.jp",
-  "megaphone.school-voice-pj.org", "inter-edu.com", "jobrainbow.jp",
-  "sdgs.media", "imakosochihou.com", "fnn.jp",
-  "meiiku.com", "yomiuri.co.jp", "kyobun.co.jp",
-  "edujump.net", "ikuhaku.com"
+  // ... 同様のサイトのリスト...
 ];
 
 searchButton.addEventListener('click', function() {
   const searchTerm = searchInput.value;
-  const siteQueries = sites.map(site => `site:${site}`).join(' OR ');
+
+  let selectedSites;
+  if (allSitesCheckbox.checked) {
+    selectedSites = sites;
+  } else {
+    selectedSites = Array.from(checkboxesContainer.querySelectorAll('input[type="checkbox"]:checked'))
+      .map(checkbox => checkbox.name);
+  }
+
+  const siteQueries = selectedSites.map(site => `site:${site}`).join(' OR ');
   const query = `${siteQueries} ${searchTerm}`;
   const searchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(query);
   openNewTab(searchUrl);
@@ -32,14 +35,10 @@ function openNewTab(url) {
   document.body.removeChild(a);
 }
 
-document.getElementById('search-button').addEventListener('click', function() {
-    var selectedSites = [];
-    var checkboxes = document.querySelectorAll('#checkboxes-container input[type="checkbox"]:checked');
-    checkboxes.forEach(function(checkbox) {
-        selectedSites.push(checkbox.value);
+function deselectOthers() {
+  if (allSitesCheckbox.checked) {
+    Array.from(checkboxesContainer.querySelectorAll('input[type="checkbox"]:not(#all-sites)')).forEach(checkbox => {
+      checkbox.checked = false;
     });
-
-    var searchQuery = document.getElementById('search-input').value;
-    // ここでselectedSitesとsearchQueryを使用して検索クエリを実行する
-});
-
+  }
+}
