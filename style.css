@@ -1,139 +1,16 @@
-<!-- style.css -->
-
-body {
-  
-  font-family: 'Poppins', sans-serif;
-  background-color: #F7F8FC;
-  color: #333;
-
+/* スタイルシート (CSS) */
+#checkboxes-container {
+    display: flex;
+    flex-direction: column; /* 縦方向に要素を並べる */
+    gap: 10px; /* 各チェックボックス間の間隔 */
+    max-width: 300px; /* コンテナの最大幅 */
+    margin: 20px auto; /* 上下の余白と、中央揃えのための自動マージン */
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #4B9DF8;
+#checkboxes-container input[type="checkbox"] {
+    margin-right: 5px; /* チェックボックスとラベルの間の余白 */
 }
 
-.search-container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 100px;
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.input-container {
-  display: flex;
-  align-items: center;
-}
-
-#site-selection {
-  display: none; 
-  /* appearance: none;
-  outline: none;
-  border: 1px solid #aaa;
-  border-radius: 8px;
-  padding: 10px;
-  width: 200px;
-  font-size: 16px;
-  margin: 10px;
-  background-color: #ffffff;
-  background-image:
-    linear-gradient(45deg, transparent 50%, #000 50%),
-    linear-gradient(135deg, #000 50%, transparent 50%),
-    linear-gradient(to right, #ccc, #ccc);
-  background-position:
-    calc(100% - 20px) calc(1em + 2px),
-    calc(100% - 15px) calc(1em + 2px),
-    calc(100% - 2.5em) 2.5em;
-  background-size:
-    5px 5px,
-    5px 5px,
-    1px 1.5em;
-  background-repeat: no-repeat;*/
-}
-
-#site-selection:hover {
-  border-color: #777;
-}
-
-#site-selection[multiple] {
-  background-image: none;
-}
-
-#site-selection:focus-visible {
-  box-shadow: 0 0 0 3px #a6c8ff;
-  border-color: #007bff;
-}
-
-#site-selection:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-#search-input {
-  padding: 10px;
-  width: 300px;
-  font-size: 16px;
-  border: 2px solid #4B9DF8;
-  border-radius: 8px;
-  margin: 10px;
-}
-
-#search-button {
-    background-color: #4B9DF8;
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin: 10px;
-}
-
-#search-button:hover {
-    background-color: #357ABD;
-}
-
-#search-history {
-  width: 100%;
-  text-align: center;
-  margin-top: 20px;
-}
-
-/* タブレット向けのスタイル */
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
-    .search-container {
-        width: 70%;
-        margin: 50px auto;
-    }
-
-    #search-input {
-        width: 80%;
-    }
-}
-
-/* スマホ向けのスタイル */
-@media only screen and (max-width: 600px) {
-    .search-container {
-        width: 90%;
-        margin: 20px auto;
-        flex-direction: column;
-    }
-
-    .input-container {
-        flex-direction: column;
-    }
-
-    #site-selection, #search-input, #search-button {
-        margin: 5px 0;
-    }
-
-    #search-input {
-        width: 100%;
-    }
+#checkboxes-container label {
+    cursor: pointer; /* ラベルにマウスカーソルを合わせたときのスタイルを指定 */
 }
