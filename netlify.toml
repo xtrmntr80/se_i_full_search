@@ -1,0 +1,6 @@
+[[headers]]
+  # すべてのパスに適用
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Cache-Control = "public, max-age=0"
