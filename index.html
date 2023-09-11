@@ -1,142 +1,108 @@
+<!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>サイト横断検索フォーム</title>
-    <style>
-        .input-container {
-            width: 100%;
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        #checkboxes-container label {
-            margin-right: 10px;
-        }
-
-        #search-input {
-            width: 80%;
-            padding: 10px;
-            margin-top: 10px;
-        }
-
-        #search-button {
-            width: 15%;
-            padding: 10px 15px;
-            margin-top: 10px;
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            cursor: pointer;
-        }
-
-        #search-button:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <!-- style.cssを読み込む -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="input-container">
-    <div id="checkboxes-container">
-        <input type="checkbox" id="cross-site-search" name="cross-site-search" value="all" onclick="deselectOthers()">
-        <label for="cross-site-search">全サイト横断検索</label>
+        <div id="checkboxes-container">
+            <input type="checkbox" id="cross-site-search" name="cross-site-search" value="all" onclick="deselectOthers()">
+            <label for="cross-site-search">全サイト横断検索</label>
 
 
-        <input type="checkbox" id="baby-calendar.jp" name="baby-calendar.jp" value="https://baby-calendar.jp/smilenews/all">
-        <label for="baby-calendar.jp">baby-calendar.jp</label>
+            <input type="checkbox" id="baby-calendar.jp" name="baby-calendar.jp" value="https://baby-calendar.jp/smilenews/all">
+            <label for="baby-calendar.jp">baby-calendar.jp</label>
 
-        <input type="checkbox" id="kidsna.com" name="kidsna.com" value="https://kidsna.com/magazine">
-        <label for="kidsna.com">kidsna.com</label>
+            <input type="checkbox" id="kidsna.com" name="kidsna.com" value="https://kidsna.com/magazine">
+            <label for="kidsna.com">kidsna.com</label>
 
-        <input type="checkbox" id="conobie.jp" name="conobie.jp" value="https://conobie.jp/">
-        <label for="conobie.jp">conobie.jp</label>
+            <input type="checkbox" id="conobie.jp" name="conobie.jp" value="https://conobie.jp/">
+            <label for="conobie.jp">conobie.jp</label>
 
-        <input type="checkbox" id="h-navi.jp" name="h-navi.jp" value="https://h-navi.jp/">
-        <label for="h-navi.jp">h-navi.jp</label>
+            <input type="checkbox" id="h-navi.jp" name="h-navi.jp" value="https://h-navi.jp/">
+            <label for="h-navi.jp">h-navi.jp</label>
 
-        <input type="checkbox" id="j-depo.com" name="j-depo.com" value="https://j-depo.com/hoiku/news/">
-        <label for="j-depo.com">j-depo.com</label>
+            <input type="checkbox" id="j-depo.com" name="j-depo.com" value="https://j-depo.com/hoiku/news/">
+            <label for="j-depo.com">j-depo.com</label>
 
-        <input type="checkbox" id="feature.cozre.jp" name="feature.cozre.jp" value="https://feature.cozre.jp/">
-        <label for="feature.cozre.jp">feature.cozre.jp</label>
+            <input type="checkbox" id="feature.cozre.jp" name="feature.cozre.jp" value="https://feature.cozre.jp/">
+            <label for="feature.cozre.jp">feature.cozre.jp</label>
 
-        <input type="checkbox" id="hugkum.sho.jp" name="hugkum.sho.jp" value="https://hugkum.sho.jp/">
-        <label for="hugkum.sho.jp">hugkum.sho.jp</label>
+            <input type="checkbox" id="hugkum.sho.jp" name="hugkum.sho.jp" value="https://hugkum.sho.jp/">
+            <label for="hugkum.sho.jp">hugkum.sho.jp</label>
 
-        <input type="checkbox" id="huffingtonpost.jp" name="huffingtonpost.jp" value="https://www.huffingtonpost.jp/">
-        <label for="huffingtonpost.jp">huffingtonpost.jp</label>
+            <input type="checkbox" id="huffingtonpost.jp" name="huffingtonpost.jp" value="https://www.huffingtonpost.jp/">
+            <label for="huffingtonpost.jp">huffingtonpost.jp</label>
 
-        <input type="checkbox" id="ure.pia.co.jp" name="ure.pia.co.jp" value="https://ure.pia.co.jp/list/media?c=hapimama">
-        <label for="ure.pia.co.jp">ure.pia.co.jp</label>
-              
-        <input type="checkbox" id="asahi.com-edua" name="asahi.com-edua" value="https://www.asahi.com/edua/">
-        <label for="asahi.com-edua">asahi.com (edua)</label>
+            <input type="checkbox" id="ure.pia.co.jp" name="ure.pia.co.jp" value="https://ure.pia.co.jp/list/media?c=hapimama">
+            <label for="ure.pia.co.jp">ure.pia.co.jp</label>
+                  
+            <input type="checkbox" id="asahi.com-edua" name="asahi.com-edua" value="https://www.asahi.com/edua/">
+            <label for="asahi.com-edua">asahi.com (edua)</label>
 
-        <input type="checkbox" id="kyoiku.sho.jp" name="kyoiku.sho.jp" value="https://kyoiku.sho.jp/">
-        <label for="kyoiku.sho.jp">kyoiku.sho.jp</label>
+            <input type="checkbox" id="kyoiku.sho.jp" name="kyoiku.sho.jp" value="https://kyoiku.sho.jp/">
+            <label for="kyoiku.sho.jp">kyoiku.sho.jp</label>
 
-        <input type="checkbox" id="juken-mikata.net" name="juken-mikata.net" value="https://juken-mikata.net/">
-        <label for="juken-mikata.net">juken-mikata.net</label>
+            <input type="checkbox" id="juken-mikata.net" name="juken-mikata.net" value="https://juken-mikata.net/">
+            <label for="juken-mikata.net">juken-mikata.net</label>
 
-        <input type="checkbox" id="mamari.jp" name="mamari.jp" value="https://mamari.jp/">
-        <label for="mamari.jp">mamari.jp</label>
+            <input type="checkbox" id="mamari.jp" name="mamari.jp" value="https://mamari.jp/">
+            <label for="mamari.jp">mamari.jp</label>
 
-        <input type="checkbox" id="sensei-no-gakkou.com" name="sensei-no-gakkou.com" value="https://www.sensei-no-gakkou.com/">
-        <label for="sensei-no-gakkou.com">sensei-no-gakkou.com</label>
+            <input type="checkbox" id="sensei-no-gakkou.com" name="sensei-no-gakkou.com" value="https://www.sensei-no-gakkou.com/">
+            <label for="sensei-no-gakkou.com">sensei-no-gakkou.com</label>
 
-        <input type="checkbox" id="kyoiku-press.co.jp" name="kyoiku-press.co.jp" value="http://www.kyoiku-press.co.jp/">
-        <label for="kyoiku-press.co.jp">kyoiku-press.co.jp</label>
+            <input type="checkbox" id="kyoiku-press.co.jp" name="kyoiku-press.co.jp" value="http://www.kyoiku-press.co.jp/">
+            <label for="kyoiku-press.co.jp">kyoiku-press.co.jp</label>
 
-        <input type="checkbox" id="megaphone.school-voice-pj.org" name="megaphone.school-voice-pj.org" value="https://megaphone.school-voice-pj.org/">
-        <label for="megaphone.school-voice-pj.org">megaphone.school-voice-pj.org</label>
+            <input type="checkbox" id="megaphone.school-voice-pj.org" name="megaphone.school-voice-pj.org" value="https://megaphone.school-voice-pj.org/">
+            <label for="megaphone.school-voice-pj.org">megaphone.school-voice-pj.org</label>
 
-        <input type="checkbox" id="inter-edu.com" name="inter-edu.com" value="https://www.inter-edu.com/">
-        <label for="inter-edu.com">inter-edu.com</label>
+            <input type="checkbox" id="inter-edu.com" name="inter-edu.com" value="https://www.inter-edu.com/">
+            <label for="inter-edu.com">inter-edu.com</label>
 
-        <input type="checkbox" id="jobrainbow.jp" name="jobrainbow.jp" value="https://jobrainbow.jp/">
-        <label for="jobrainbow.jp">jobrainbow.jp</label>
+            <input type="checkbox" id="jobrainbow.jp" name="jobrainbow.jp" value="https://jobrainbow.jp/">
+            <label for="jobrainbow.jp">jobrainbow.jp</label>
 
-        <input type="checkbox" id="sdgs.media" name="sdgs.media" value="https://sdgs.media/">
-        <label for="sdgs.media">sdgs.media</label>
+            <input type="checkbox" id="sdgs.media" name="sdgs.media" value="https://sdgs.media/">
+            <label for="sdgs.media">sdgs.media</label>
 
-        <input type="checkbox" id="imakosochihou.com" name="imakosochihou.com" value="http://imakosochihou.com/">
-        <label for="imakosochihou.com">imakosochihou.com</label>
+            <input type="checkbox" id="imakosochihou.com" name="imakosochihou.com" value="http://imakosochihou.com/">
+            <label for="imakosochihou.com">imakosochihou.com</label>
 
-        <input type="checkbox" id="fnn.jp" name="fnn.jp" value="https://www.fnn.jp/">
-        <label for="fnn.jp">fnn.jp</label>
+            <input type="checkbox" id="fnn.jp" name="fnn.jp" value="https://www.fnn.jp/">
+            <label for="fnn.jp">fnn.jp</label>
 
-        <input type="checkbox" id="meiiku.com" name="meiiku.com" value="https://meiiku.com/">
-        <label for="meiiku.com">meiiku.com</label>
+            <input type="checkbox" id="meiiku.com" name="meiiku.com" value="https://meiiku.com/">
+            <label for="meiiku.com">meiiku.com</label>
 
-        <input type="checkbox" id="yomiuri.co.jp" name="yomiuri.co.jp" value="https://www.yomiuri.co.jp/">
-        <label for="yomiuri.co.jp">yomiuri.co.jp</label>
+            <input type="checkbox" id="yomiuri.co.jp" name="yomiuri.co.jp" value="https://www.yomiuri.co.jp/">
+            <label for="yomiuri.co.jp">yomiuri.co.jp</label>
 
-        <input type="checkbox" id="asahi.com-main" name="asahi.com-main" value="https://www.asahi.com/?iref=pc_gnavi">
-        <label for="asahi.com-main">asahi.com (main)</label>
+            <input type="checkbox" id="asahi.com-main" name="asahi.com-main" value="https://www.asahi.com/?iref=pc_gnavi">
+            <label for="asahi.com-main">asahi.com (main)</label>
 
-        <input type="checkbox" id="kyobun.co.jp" name="kyobun.co.jp" value="https://www.kyobun.co.jp/">
-        <label for="kyobun.co.jp">kyobun.co.jp</label>
+            <input type="checkbox" id="kyobun.co.jp" name="kyobun.co.jp" value="https://www.kyobun.co.jp/">
+            <label for="kyobun.co.jp">kyobun.co.jp</label>
 
-        <input type="checkbox" id="edujump.net" name="edujump.net" value="https://edujump.net/">
-        <label for="edujump.net">edujump.net</label>
+            <input type="checkbox" id="edujump.net" name="edujump.net" value="https://edujump.net/">
+            <label for="edujump.net">edujump.net</label>
 
-        <input type="checkbox" id="ikuhaku.com" name="ikuhaku.com" value="https://www.ikuhaku.com/">
-        <label for="ikuhaku.com">ikuhaku.com</label>
-        
-        
+            <input type="checkbox" id="ikuhaku.com" name="ikuhaku.com" value="https://www.ikuhaku.com/">
+            <label for="ikuhaku.com">ikuhaku.com</label>
+
+            
+        </div>
+        <input type="text" id="search-input" placeholder="トピックを検索">
+        <button id="search-button">Go!</button>
     </div>
-    <input type="text" id="search-input" placeholder="トピックを検索">
-    <button id="search-button">Go!</button>
-</div>
-
-    </div>
-    <script>
-        // JavaScriptを使って、例えば全サイト横断検索がチェックされた場合に、他のチェックボックスが選択解除されるような処理を追加することができます。
-    </script>
+    <!-- JavaScriptを使って、例えば全サイト横断検索がチェックされた場合に、他のチェックボックスが選択解除されるような処理を追加することができます。 -->
+    <script src="script.js"></script>
 </body>
 </html>
