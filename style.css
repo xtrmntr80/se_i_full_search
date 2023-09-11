@@ -4,23 +4,15 @@
 /* ベースのスタイル */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #DFF9E4; /* Changed to pastel green */
+    background-color: #3bb3f5; 
     color: #333;
 }
 
 /* チェックボックスコンテナのスタイル */
 #checkboxes-container {
-    display: flex;
-    flex-wrap: wrap; /* Allows checkboxes to wrap to next line */
-    justify-content: center; /* Centers checkboxes */
-    gap: 10px;
-    max-width: 900px; /* Increased width */
-    margin: 20px auto;
-    border: 2px solid blue;/* 青の枠線 */
-    border-radius: 5px;/* 枠線の角を丸める */
-    padding: 15px;/* 内部のスペース */
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
-    background-color: white; /* 白の背景 */
+    /* ... (変更なし) */
+    border: 2px solid #0078b9a3; 
+    background-color: white; 
 }
 
 
@@ -30,8 +22,8 @@ body {
     appearance: none;
     width: 20px;
     height: 20px;
-    background-color: #DFF9E4; /* Changed to pastel green */
-    border: 1px solid #B2DFDB; /* Border color changed to a lighter shade of green */
+    background-color: #ffffff;
+    border: 1px solid #4fc5bb; 
     border-radius: 4px;
     position: relative;
     outline: none;
@@ -39,8 +31,8 @@ body {
 }
 
 #checkboxes-container input[type="checkbox"]:checked::after {
-    content: '''; /* Fixed the checkmark content */
-    color: #B2DFDB; /* Changed to light green */
+    content: ''';
+    color: #e6f0ef;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -52,7 +44,7 @@ body {
     cursor: pointer;
     font-size: 15px;
     font-weight: bold;
-    color: #0288D1; /* Changed to refreshing blue */
+    color: #0288D1; 
 }
 
 /* 検索ボタンのスタイル */
@@ -60,28 +52,26 @@ body {
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
-    background-color: #4CAF50; /* Changed to pop green */
-    color: white;
+    background-color: #fefefe; 
+    color: #3bb3f5
     font-size: 16px;
     cursor: pointer;
     margin-top: 10px;
 }
 
 #search-button:hover {
-    background-color: #43A047; /* Darker green for hover */
+    background-color: #43A047; 
 }
 
 /* Search input styles */
 #search-input {
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #B2DFDB; /* Light green border */
+    border: 1px solid #B2DFDB; 
     width: 100%;
     box-sizing: border-box;
     margin-top: 10px;
 }
-}
-
 
 /* For tablets */
 @media (max-width: 768px) {
@@ -94,8 +84,8 @@ body {
 @media (max-width: 480px) {
     #checkboxes-container {
         max-width: 90%;
-        flex-direction: column; /* Stack checkboxes vertically for smaller screens */
-        align-items: center; /* Center the items */
+        flex-direction: column; 
+        align-items: center; 
     }
 
     #search-input {
