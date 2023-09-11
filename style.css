@@ -1,26 +1,20 @@
 
 /* style.css */
 
+/* style.css */
+
 /* ベースのスタイル */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #DFF9E4; /* Changed to pastel green */
-    color: solid blue;
+    background-color: #FED7D9; /* パステルピンク */
+    color: #333;
 }
 
 /* チェックボックスコンテナのスタイル */
 #checkboxes-container {
-    display: flex;
-    flex-wrap: wrap; /* Allows checkboxes to wrap to next line */
-    justify-content: center; /* Centers checkboxes */
-    gap: 10px;
-    max-width: 900px; /* Increased width */
-    margin: 20px auto;
-    border: 2px solid blue;/* 青の枠線 */
-    border-radius: 5px;/* 枠線の角を丸める */
-    padding: 15px;/* 内部のスペース */
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
-    background-color: white; /* 白の背景 */
+    /* ... (変更なし) */
+    border: 2px solid #FEB2B2; /* パステルレッド */
+    background-color: #FFF5F5; /* 薄いピンク */
 }
 
 
