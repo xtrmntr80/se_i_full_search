@@ -1,44 +1,48 @@
+
+/* style.css */
+
 /* ベースのスタイル */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #FAF3DD; /* パステルイエロー */
-    color: #333; /* ダークテキスト */
+    background-color: #DFF9E4; /* Changed to pastel green */
+    color: #333;
 }
 
 /* チェックボックスコンテナのスタイル */
 #checkboxes-container {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap; /* Allows checkboxes to wrap to next line */
+    justify-content: center; /* Centers checkboxes */
     gap: 10px;
-    max-width: 300px;
+    max-width: 900px; /* Increased width */
     margin: 20px auto;
     border-radius: 15px;
     padding: 15px;
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2); /* 影付きでポップな感じに */
-    background-color: #F2DFF4; /* パステルパープル */
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+    background-color: #E1F5FE; /* Changed to pastel blue */
 }
 
 /* チェックボックスとラベルのスタイル */
 #checkboxes-container input[type="checkbox"] {
     margin-right: 8px;
-    appearance: none; /* デフォルトのチェックボックススタイルを非表示に */
+    appearance: none;
     width: 20px;
     height: 20px;
-    background-color: #FFD5E5; /* パステルピンク */
-    border: 1px solid #FFAEC8; /* より明るいピンクのボーダー */
+    background-color: #DFF9E4; /* Changed to pastel green */
+    border: 1px solid #B2DFDB; /* Border color changed to a lighter shade of green */
     border-radius: 4px;
     position: relative;
-    outline: none; /* クリック時のアウトラインを非表示に */
+    outline: none;
     cursor: pointer;
 }
 
 #checkboxes-container input[type="checkbox"]:checked::after {
-    content: '''; /* チェックマークのアイコン */
-    color: #FFAEC8; /* より明るいピンク */
+    content: '''; /* Fixed the checkmark content */
+    color: #B2DFDB; /* Changed to light green */
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* 中央に配置 */
+    transform: translate(-50%, -50%);
     font-size: 14px;
 }
 
@@ -46,7 +50,7 @@ body {
     cursor: pointer;
     font-size: 15px;
     font-weight: bold;
-    color: #FF85AB; /* 明るいピンクテキスト */
+    color: #0288D1; /* Changed to refreshing blue */
 }
 
 /* 検索ボタンのスタイル */
@@ -54,7 +58,7 @@ body {
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
-    background-color: #FFB8B8; /* ピンクベースのボタン色 */
+    background-color: #4CAF50; /* Changed to pop green */
     color: white;
     font-size: 16px;
     cursor: pointer;
@@ -62,16 +66,38 @@ body {
 }
 
 #search-button:hover {
-    background-color: #FFA0A0; /* ホバー時の明るいピンク */
+    background-color: #43A047; /* Darker green for hover */
 }
 
-/* 検索入力のスタイル */
+/* Search input styles */
 #search-input {
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #FFAEC8; /* 明るいピンクのボーダー */
+    border: 1px solid #B2DFDB; /* Light green border */
     width: 100%;
     box-sizing: border-box;
     margin-top: 10px;
+}
+}
+
+
+/* For tablets */
+@media (max-width: 768px) {
+    #checkboxes-container {
+        max-width: 700px;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    #checkboxes-container {
+        max-width: 90%;
+        flex-direction: column; /* Stack checkboxes vertically for smaller screens */
+        align-items: center; /* Center the items */
+    }
+
+    #search-input {
+        width: 100%;
+    }
 }
 
