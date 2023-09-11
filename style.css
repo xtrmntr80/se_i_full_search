@@ -12,7 +12,7 @@ body {
 #checkboxes-container {
     /* ... (変更なし) */
     border: 2px solid #68D391; /* 明るいグリーン */
-    background-color: #EDF2F7; /* 薄いグリーン */
+    background-color: white; /* 薄いグリーン */
 }
 
 
