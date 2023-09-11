@@ -16,11 +16,13 @@ body {
     gap: 10px;
     max-width: 900px; /* Increased width */
     margin: 20px auto;
-    border-radius: 15px;
-    padding: 15px;
+    border: 2px solid blue;/* 青の枠線 */
+    border-radius: 5px;/* 枠線の角を丸める */
+    padding: 15px;/* 内部のスペース */
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
-    background-color: #E1F5FE; /* Changed to pastel blue */
+    background-color: white; /* 白の背景 */
 }
+
 
 /* チェックボックスとラベルのスタイル */
 #checkboxes-container input[type="checkbox"] {
