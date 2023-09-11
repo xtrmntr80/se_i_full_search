@@ -1,22 +1,20 @@
 
 /* style.css */
 
-/* style.css */
 
 /* ベースのスタイル */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #FED7D9; /* パステルピンク */
+    background-color: #E2E8F0; /* パステルブルー */
     color: #333;
 }
 
 /* チェックボックスコンテナのスタイル */
 #checkboxes-container {
     /* ... (変更なし) */
-    border: 2px solid #FEB2B2; /* パステルレッド */
-    background-color: #FFF5F5; /* 薄いピンク */
+    border: 2px solid #90CDF4; /* 明るいブルー */
+    background-color: #F0F4F8; /* 薄いブルー */
 }
-
 
 /* チェックボックスとラベルのスタイル */
 #checkboxes-container input[type="checkbox"] {
